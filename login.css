@@ -164,7 +164,7 @@ body {
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 11px;
     color: var(--text-dark);
     position: relative;
     padding-left: 28px;
@@ -291,7 +291,7 @@ body {
 }
 
 .card-link i {
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .card-link:hover {
