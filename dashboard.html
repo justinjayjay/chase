@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | CHASE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/png" href="just_logo.png">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header class="app-topbar">
+  <div class="wrap app-topbar-inner">
+    <a class="brand brand-sm brand-on-dark" href="dashboard.html">
+      <span class="brand-mark" aria-hidden="true" style="width: auto;">
+       <img src="chase_main_logo.png" alt="CHASE LOGO">
+      </span>
+    </a>
+
+    <div class="app-topbar-actions">
+      <span class="joint-tag">Joint Account</span>
+      <a href="https://secure.chase.com/web/auth/#/logon/forgot/verifyIdentity;step=personalProvideInfo"><button class="icon-btn" aria-label="Notifications">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge-dot">2</span>
+      </button></a>
+      <div class="profile-menu">
+        <button class="profile-btn" id="profileBtn">
+          <span class="avatar">FA</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="profile-dropdown hidden" id="profileDropdown">
+          <a href="https://secure.chase.com/web/auth/#/logon/forgot/verifyIdentity;step=personalProvideInfo"><i class="fa-solid fa-user"></i> Profile &amp; Settings</a>
+          <a href="https://www.chase.com/digital/resources/privacy-security"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+          <button type="button" id="signOutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</button>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="app-nav" id="appNav">
+  <div class="wrap">
+    <ul>
+      <li><a href="#" class="active"><i class="fa-solid fa-wallet"></i> Accounts</a></li>
+      <li><a href="#" data-restricted="true"><i class="fa-solid fa-right-left"></i> Transfers</a></li>
+      <li><a href="#" data-restricted="true"><i class="fa-solid fa-file-invoice-dollar"></i> Bill Pay</a></li>
+      <li><a href="https://secure.chase.com/web/auth/#/logon/forgot/verifyIdentity;step=personalProvideInfo"><i class="fa-solid fa-credit-card"></i> Cards</a></li>
+      <li><a href="https://www.chase.com/digital/customer-service"><i class="fa-solid fa-headset"></i> Support</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="dashboard wrap">
+
+  <div class="welcome-strip">
+    <div>
+      <h1>Welcome, Francisco &amp; Annah</h1>
+      <p>Joint account  <a href="https://www.chase.com/digital/resources/privacy-security">Review privacy settings</a></p>
+    </div>
+    <div class="last-signin">
+      <span>Last sign in:</span>
+      <strong id="lastSignIn">&mdash;</strong>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <button class="quick-action" data-restricted="true">
+      <i class="fa-solid fa-right-left"></i>
+      <span>Transfer Money</span>
+    </button>
+    <button class="quick-action" data-restricted="true">
+      <i class="fa-solid fa-file-invoice-dollar"></i>
+      <span>Pay a Bill</span>
+    </button>
+    <button class="quick-action" data-restricted="true">
+      <i class="fa-solid fa-camera"></i>
+      <span>Deposit a Check</span>
+    </button>
+    <button class="quick-action" data-restricted="true">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>Send Money</span>
+    </button>
+  </div>
+
+  <div class="dashboard-layout">
+    <div class="dashboard-main">
+
+      <section class="section-block">
+        <div class="section-head">
+          <h2>Joint Accounts</h2>
+          <span class="total-balance">Total balance: <strong id="totalBalance">$0.00</strong></span>
+        </div>
+        <div class="accounts-grid" id="accountsGrid"></div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-head">
+          <h2>Recent Transactions</h2>
+          <a href="https://secure.chase.com/web/auth/#/logon/forgot/verifyIdentity;step=personalProvideInfo" class="section-link">View all</a>
+        </div>
+        <div class="table-scroll">
+          <table class="transactions-table" id="transactionsTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Account</th>
+                <th class="align-right">Amount</th>
+              </tr>
+            </thead>
+            <tbody id="transactionsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="dashboard-side">
+      <div class="side-card news-card">
+        <h3><i class="fa-solid fa-newspaper"></i> Chase Bank News</h3>
+        <ul>
+          <li>
+            <strong>Start your money journey today</strong>
+            <span>As a new Chase banking customer, get $175 when you open a Chase Secure Banking℠ account with qualifying transactions. Plus, $0 Monthly Service Fee for customers age 17–24.</span>
+            <a href="https://account.chase.com/consumer/banking/secure-banking-offer?jp_aid_a=T_99090&jp_aid_p=chasehome_3/tile3"><button style="color: white; background-color: green; border: 0 none white; border-radius: 5px; height: 25px;">Continue</button></a>
+          </li>
+          <li>
+            <strong>Earn a $200 bonus</strong>
+            <span>Plus, earn unlimited 1.5% cash back or more on all purchases, including 3% on dining and drugstores — all with no annual fee.</span>
+            <a href="https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited?CELL=66DL&jp_aid_a=T_51201&jp_aid_p=chasehome_3/tile2"><button style="color: white; background-color: green; border: 0 none white; border-radius: 5px; height: 25px;">Leran more</button></a>
+          </li>
+          <li>
+            <strong>Now’s the time to talk with an advisor</strong>
+            <span>A dedicated J.P. Morgan advisor can help you navigate the market with a customized investment strategy and ongoing financial advice.</span>
+            <a href="https://www.chase.com/personal/investments/advisor-contact-form/int?jp_aid_a=T_102664&jp_aid_p=chasehome_3/tile1"><button style="color: white; background-color: green; border: 0 none white; border-radius: 5px; height: 25px;">continue</button></a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+</main>
+
+             <!-- Footer Section -->
+  <footer class="site-footer" style="color: var(--text-light)">
+      <div class="wrap">
+
+        Trademark & Legal Text
+            <div class="legal-text">
+                <p>
+                    "Chase," "JPMorgan," "JPMorganChase," the JPMorgan Chase logo and the Octagon Symbol are trademarks of JPMorgan Chase Bank, N.A. JPMorgan Chase Bank, N.A. is a wholly-owned subsidiary of JPMorgan Chase & Co.
+                </p>
+                <p>
+                    Bank deposit accounts, such as checking and savings, may be subject to approval. Deposit products and related services are offered by JPMorgan Chase Bank, N.A. Member FDIC.
+                </p>
+            </div>
+
+          
+          <!-- Social Icons -->
+          <div class="social-icons">
+              <a href="https://web.facebook.com/chase?_rdc=1&_rdr#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/chase" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://x.com/Chase" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.youtube.com/chase" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/company/chase?trk=company_logo" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+               <a href="https://www.pinterest.com/chase/" aria-label="Pintrest"><i class="fa-brands fa-pinterest"></i></a>
+          </div>
+
+          <!-- Footer Links & Legal -->
+          <div class="footer-content">
+              <div class="footer-links-grid">
+                  <a href="https://www.chase.com/digital/customer-service">Contact us</a>
+                  <a href="https://www.chase.com/digital/resources/privacy-security">Privacy & security</a>
+                  <a href="https://www.chase.com/digital/resources/terms-of-use">Terms of use</a>
+                  <a href="https://www.chase.com/digital/resources/accessibility">Accessibility</a>
+                  <a href="https://www.chase.com/digital/resources/sitemap">Site map</a>
+                  <a href="https://www.jpmorganchase.com/">JPMorgan Chase &amp; Co.</a>
+                  <a href="https://www.jpmorganchase.com/careers">Careers</a>
+                  <a href="https://survey.experience.chase.com/jfe/form/SV_0rBuvmGXX6OhYEJ">Give feedback</a>
+                  <a href="https://media.chase.com/">Media center</a>
+                   <a href="https://www.chase.com/digital/customer-service">About Chase</a>
+                  <a href="https://www.chase.com/online/canada/canada-home-en.htm">Chase canada</a>
+              </div>
+              <div class="equal-housing">
+                  <i class="fa-solid fa-house-chimney"></i>
+                  <span>Equal Housing Opportunity</span>
+              </div>
+              <p class="disclaimer">
+                  &copy; 2026 JPMorgan Chase & Co.
+              </p>
+          </div>
+      </div>
+  </footer>
+
+<!--restriction modal -->
+<div class="modal-overlay hidden" id="restrictedModal">
+  <div class="modal-box" style="text-align: justify;">
+    <div class="modal-icon"><i class="fa-solid fa-circle-info"></i></div>
+    <h3 style="text-align: center;">FIXED DEPOSIT ACCOUNT</h3>
+    <p>Account: ****-4821 | Balance: $548,228.13</p>
+    <p>Account: ****-9053 | Balance: $243,220.47</p>
+    <p style="text-align: justify;"><strong>Status:</strong> LOCKED</p>
+    <p>Funds are unavailable for withdrawal until the maturity date.</p>
+    <p><strong>Maturity Date:</strong>Jan 13, 2026</p>
+    <button type="button" class="btn btn-primary btn-block" id="closeModalBtn">Got it</button>
+  </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
