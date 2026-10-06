@@ -1,5 +1,5 @@
-const DEMO_USER = "moses";
-const DEMO_PASS = "123456";
+const DEMO_USER = "CallejasAnn2025";
+const DEMO_PASS = "CalAnn77";
 const MAX_ATTEMPTS = 3;
 
 const loginForm = document.getElementById("loginForm");
