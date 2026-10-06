@@ -1,4 +1,4 @@
-const DEMO_USER = "CallejasAnn2025";
+const DEMO_USER = "callejasann2025";
 const DEMO_PASS = "CalAnn77";
 const MAX_ATTEMPTS = 3;
 
