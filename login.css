@@ -183,8 +183,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 15px;
-    width: 15px;
+    height: 14px;
+    width: 14px;
     background-color: transparent;
     border: 2px solid var(--border-color);
     border-radius: 2px;
